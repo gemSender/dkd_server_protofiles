@@ -10,6 +10,12 @@ message Login{
     required string id = 1;
 }
 
+message LoginReply{
+    required float x = 1;
+    required float y = 2;
+    required int32 colorIndex = 3;
+}
+
 message MoveTo{
     required float x = 1;
     required float y = 2;
@@ -29,10 +35,11 @@ message PlayerLogin{
     required string id = 1;
     required float x = 2;
     required float y = 3;
+    required int32 colorIndex = 4;
 }
 
 message GenReplyMsg{
     required string type = 1;
-    required bool isReply = 2;
+    optional bool isReply = 2  [default = false];
     required bytes data = 3;
 }
