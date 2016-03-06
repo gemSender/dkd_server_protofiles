@@ -38,6 +38,10 @@ message PlayerLogin{
     required int32 colorIndex = 4;
 }
 
+message PlayerQuit{
+    required string id = 1;
+}
+
 message GenReplyMsg{
     required string type = 1;
     optional bool isReply = 2  [default = false];
