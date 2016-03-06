@@ -10,11 +10,19 @@ message Login{
     required string id = 1;
 }
 
+message PlayerState{
+    required string id = 1;
+    required float x = 2;
+    required float y = 3;
+    required int32 colorIndex = 4;
+}
+
 message LoginReply{
     required float x = 1;
     required float y = 2;
     required int32 colorIndex = 3;
     required int64 timestamp = 4;
+    repeated PlayerState players = 5;
 }
 
 message MoveTo{
