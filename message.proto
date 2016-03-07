@@ -25,6 +25,23 @@ message LoginReply{
     repeated PlayerState players = 5;
 }
 
+message StartPath{
+    required float sx = 1;
+    required float sy = 2;
+    required float dx = 3;
+    required float dy = 4;
+    required int64 timestamp = 5;
+}
+
+message PlayerStartPath{
+    required string id = 1;
+    required float sx = 2;
+    required float sy = 3;
+    required float dx = 4;
+    required float dy = 5;
+    required int64 timestamp = 6;
+}
+
 message MoveTo{
     required float x = 1;
     required float y = 2;
