@@ -20,12 +20,10 @@ message PlayerState{
 }
 
 message LoginReply{
-    required float x = 1;
-    required float y = 2;
-    required int32 colorIndex = 3;
-    required int64 timestamp = 4;
-    repeated PlayerState players = 5;
-    required int32 index = 6;
+    optional int32 errorCode = 1 [default=0];
+    optional PlayerState myState = 2;
+    repeated PlayerState players = 3;
+    optional int64 timestamp = 4 [default=0];
 }
 
 message StartPath{
@@ -63,11 +61,8 @@ message PlayerMoveTo{
 }
 
 message PlayerLogin{
-    required int32 index = 1;
-    required float x = 2;
-    required float y = 3;
-    required int32 colorIndex = 4;
-    required int64 timestamp = 5;
+    required PlayerState playerData = 1;
+    required int64 timestamp = 2;
 }
 
 message PlayerQuit{
