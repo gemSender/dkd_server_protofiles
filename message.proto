@@ -7,14 +7,16 @@ message GenMessage{
 }
 
 message Login{
-    required string id = 1;
+    required string equipId = 1;
 }
 
 message PlayerState{
-    required string id = 1;
+    required int32 index = 1;
     required float x = 2;
     required float y = 3;
     required int32 colorIndex = 4;
+    required int32 level = 5;
+    required int32 exp = 6;
 }
 
 message LoginReply{
@@ -23,6 +25,7 @@ message LoginReply{
     required int32 colorIndex = 3;
     required int64 timestamp = 4;
     repeated PlayerState players = 5;
+    required int32 index = 6;
 }
 
 message StartPath{
@@ -34,7 +37,7 @@ message StartPath{
 }
 
 message PlayerStartPath{
-    required string id = 1;
+    required int32 index = 1;
     required float sx = 2;
     required float sy = 3;
     required float dx = 4;
@@ -51,7 +54,7 @@ message MoveTo{
 }
 
 message PlayerMoveTo{
-    required string id = 1;
+    required int32 index = 1;
     required float x = 2;
     required float y = 3;
     required float dirX = 4;
@@ -60,7 +63,7 @@ message PlayerMoveTo{
 }
 
 message PlayerLogin{
-    required string id = 1;
+    required int32 index = 1;
     required float x = 2;
     required float y = 3;
     required int32 colorIndex = 4;
@@ -68,7 +71,7 @@ message PlayerLogin{
 }
 
 message PlayerQuit{
-    required string id = 1;
+    required int32 index = 1;
 }
 
 message GenReplyMsg{
