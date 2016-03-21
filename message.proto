@@ -34,6 +34,14 @@ message StartPath{
     required int64 timestamp = 5;
 }
 
+message Vec2{
+    required float x = 1;
+    required float y = 2;
+}
+message StartPathReply{
+    repeated Vec2 vertices = 1;
+}
+
 message PlayerStartPath{
     required int32 index = 1;
     required float sx = 2;
