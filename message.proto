@@ -38,8 +38,14 @@ message Vec2{
     required float x = 1;
     required float y = 2;
 }
+
+message Segment{
+    required Vec2 start = 1;
+    required Vec2 end = 2;
+}
 message StartPathReply{
     repeated Vec2 vertices = 1;
+    repeated Segment edges = 2;
 }
 
 message PlayerStartPath{
